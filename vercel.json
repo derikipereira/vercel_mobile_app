@@ -1,0 +1,19 @@
+{
+    "builds": [
+      {
+        "src": "install_flutter.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "command": "bash install_flutter.sh && flutter build web --release"
+        }
+      },
+      {
+        "src": "web/**",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build/web"
+        }
+      }
+    ]
+  }
+  
